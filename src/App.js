@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import logo from './logo.svg';
+import Home from './component/Home';
+import About from './component/About';
+import Topics from './component/Topics';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        nav:['首页','A页面','B页面']
+    };
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App" style={{backgroundColor: '#282c34'}}>
+          <Route exact path="/" component={Home} />
+          <Route path="/about/:id" name="Rub" component={About} />
+          <Route path="/topics" component={Topics} />
+          <div className="navFoot">
+            <ul>
+              <li><Link to="/">{this.state.nav[0]}</Link></li>
+              <li><Link to="/about/2333">{this.state.nav[1]}</Link></li>
+              <li><Link to="/topics">{this.state.nav[2]}</Link></li>
+            </ul>
+          </div>
+        </div>
+      </Router>
     );
   }
 }
