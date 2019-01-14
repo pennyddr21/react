@@ -12,7 +12,6 @@ class About extends React.Component {
     }
     linkUrl() {
         this.props.history.push('/TestArea')
-        // console.log(this.props)
     }
     render() {
         return (
@@ -20,7 +19,6 @@ class About extends React.Component {
                 <h3>About Page</h3>
                 <div>Route传值参数 : {this.props.match.params.id}</div>
                 <button onClick={this.linkUrl}>click react links</button>
-                {/* <button onClick={this.linkUrl}><Link to="/TestArea">click react links</Link></button> */}
             </div>
         );
     }

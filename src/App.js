@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './component/Home';
 import About from './component/About';
 import Topics from './component/Topics';
+import TestArea from './component/TestArea';
 import './App.css';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/about/:id" name="Rub" component={About} />
           <Route path="/topics" component={Topics} />
+          <Route path="/testArea" component={TestArea} />
           <div className="navFoot">
             <ul>
               <li><Link to="/">{this.state.nav[0]}</Link></li>

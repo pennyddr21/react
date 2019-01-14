@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Topics2() {
+function TestArea() {
     return (
         <div className="topicsBox">
             <h2>testArea</h2>
@@ -8,4 +8,4 @@ function Topics2() {
     );
 }
 
-export default Topics2;
+export default TestArea;
